@@ -1,0 +1,11 @@
+body,
+html {
+    font-family: $ff-primary;
+	font-weight: $fw-400;
+	font-size: $fs-base;
+}
+
+body {
+	min-height: 100vh;
+	background-color: $clr-neutral-light;
+}
