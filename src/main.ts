@@ -14,17 +14,10 @@ const createSpan = (): HTMLSpanElement => {
 	const s = document.createElement(`span`)
 	s.classList.add('bar-span')
 	s.style.position = 'absolute'
-	s.style.top = '-1.5rem'
-	s.style.left = '-0.5rem'
 	s.style.fontSize = '0.6rem'
 	s.style.color = 'hsl(33, 100%, 98%)'
 	s.style.backgroundColor = 'hsl(25, 47%, 15%)'
 	s.style.borderRadius = '0.2rem'
-	s.style.width = '2rem'
-	s.style.height = '1rem'
-	s.style.paddingTop = '0.2rem'
-	s.style.paddingLeft = '0.1rem'
-	s.style.paddingRight = '0.1rem'
 	return s
 }
 const bars: NodeListOf<HTMLDivElement> = document.querySelectorAll('.bar')!

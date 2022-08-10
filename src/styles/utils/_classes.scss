@@ -25,6 +25,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	@include mq() {
+		width: 400px;
+		height: 60px;
+	}
 }
 
 .balance-container p {
@@ -46,7 +50,7 @@
 .bottom-box {
 	background-color: $clr-neutral-pale;
 	color: $clr-neutral-dark;
-	height: 350px;
+	height: 400px;
 	width: 250px;
 	margin: 1rem auto;
 	border-radius: 10px;
@@ -67,6 +71,11 @@
 		margin-bottom: 2.5rem;
 		margin-top: 2.5rem;
 		height: 20rem;
+	}
+
+	@include mq() {
+		width: 400px;
+		height: 400px;
 	}
 }
 
@@ -139,6 +148,15 @@
 
 .bar-span {
 	display: none;
+	top: -1.5rem;
+	left: -0.5rem;
+	width: 2rem;
+	height: 1rem;
+	padding: 0.2rem 0.1rem 0 0.1rem;
+	@include mq() {
+		top: -2rem;
+		padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+	}
 
 	&.active {
 		display: inline-block;
