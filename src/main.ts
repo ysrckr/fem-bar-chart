@@ -31,11 +31,11 @@ bars.forEach((bar, index) => {
 	span.innerText = '$' + data[index].amount.toString()
 })
 bars.forEach(bar => {
-	bar.addEventListener('mouseover', (e: MouseEvent) => {
+	bar.addEventListener('mouseover', () => {
 		const barSpan: HTMLSpanElement = bar.querySelector('.bar-span')!
 		barSpan.classList.add('active')
 	})
-	bar.addEventListener('mouseout', (e: MouseEvent) => {
+	bar.addEventListener('mouseout', () => {
 		const barSpan: HTMLSpanElement = bar.querySelector('.bar-span')!
 		barSpan.classList.remove('active')
 	})
