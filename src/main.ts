@@ -10,9 +10,42 @@ const barFive: HTMLDivElement = document.querySelector('.bar-5')!
 const barSix: HTMLDivElement = document.querySelector('.bar-6')!
 const barSeven: HTMLDivElement = document.querySelector('.bar-7')!
 
-const bars: HTMLDivElement[] = document.querySelectorAll('.bar')!
+const createSpan = (): HTMLSpanElement => {
+	const s = document.createElement(`span`)
+	s.classList.add('bar-span')
+	s.style.position = 'absolute'
+	s.style.top = '-1.5rem'
+	s.style.left = '-0.5rem'
+	s.style.fontSize = '0.6rem'
+	s.style.color = 'hsl(33, 100%, 98%)'
+	s.style.backgroundColor = 'hsl(25, 47%, 15%)'
+	s.style.borderRadius = '0.2rem'
+	s.style.width = '2rem'
+	s.style.height = '1rem'
+	s.style.paddingTop = '0.2rem'
+	s.style.paddingLeft = '0.1rem'
+	s.style.paddingRight = '0.1rem'
+	return s
+}
+const bars: NodeListOf<HTMLDivElement> = document.querySelectorAll('.bar')!
 bars.forEach(bar => {
 	bar.style.position = 'relative'
+})
+bars.forEach((bar, index) => {
+	const span = createSpan()
+	bar.appendChild(span)
+	bar.style.textAlign = 'center'
+	span.innerText = '$' + data[index].amount.toString()
+})
+bars.forEach(bar => {
+	bar.addEventListener('mouseover', (e: MouseEvent) => {
+		const barSpan: HTMLSpanElement = bar.querySelector('.bar-span')!
+		barSpan.classList.add('active')
+	})
+	bar.addEventListener('mouseout', (e: MouseEvent) => {
+		const barSpan: HTMLSpanElement = bar.querySelector('.bar-span')!
+		barSpan.classList.remove('active')
+	})
 })
 
 barOne.style.height = (data[0].amount * 14) / 100 + 'rem'

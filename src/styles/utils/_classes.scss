@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:color';
 
 .container {
 	max-width: 375px;
@@ -62,8 +63,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		gap: 0.5rem;
+		gap: 1rem;
 		margin-bottom: 2.5rem;
+		margin-top: 2.5rem;
+		height: 20rem;
 	}
 }
 
@@ -132,4 +135,17 @@
 		font-weight: $fw-700;
 		color: $clr-neutral-dark;
 	}
+}
+
+.bar-span {
+	display: none;
+
+	&.active {
+		display: inline-block;
+	}
+}
+
+.bar:hover {
+	cursor: pointer;
+	opacity: 0.75;
 }
